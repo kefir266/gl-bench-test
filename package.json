@@ -18,11 +18,11 @@
     "url": "https://github.com/Zadvornyi/bench_test/issues"
   },
   "dependencies": {
-    "angular": "^1.5.7",
-    "angular-animate": "^1.5.7",
+    "angular": "^1.7.5",
+    "angular-animate": "^1.7.5",
     "angular-resource": "^1.7.5",
-    "angular-sanitize": "^1.5.7",
-    "angular-touch": "^1.5.7",
+    "angular-sanitize": "^1.7.5",
+    "angular-touch": "^1.7.5",
     "angular-ui-bootstrap": "^2.5.6",
     "angular-ui-router": "^1.0.20",
     "jquery": "^3.3.1",
@@ -46,7 +46,7 @@
     "node-sass": "^4.9.3",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
-    "url-loader": "^1.0.1",
+    "url-loader": "^1.1.2",
     "webpack": "^4.17.1",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.7"
