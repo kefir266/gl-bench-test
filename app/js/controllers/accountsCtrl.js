@@ -1,10 +1,13 @@
-function AccountsCtrl ($scope, $rootScope, $state, $stateParams) {
-  let acounts = this;
-  
-  return acounts;
-};
-
-AccountsCtrl.$inject = ['$scope', '$rootScope', '$state', '$stateParams'];
+/*@njInject*/
+function AccountsCtrl (
+  $scope,
+  $rootScope,
+  $state,
+  $stateParams,
+  employees
+) {
+  angular.extend(this, {employees});
+}
 
 export default (ngModule) => {
   ngModule.controller('AccountsCtrl', AccountsCtrl);

@@ -1,6 +1,10 @@
-
-function AppCtrl($scope, $state) {
+/*@ngIngecut*/
+function AppCtrl($scope, $state, CreateAccountModal) {
   let appCtrl = this;
+
+  angular.extend(this, {
+    addAccount
+  });
 
   appCtrl.option = {
     name: 'GL-Bench-Test',
@@ -9,9 +13,14 @@ function AppCtrl($scope, $state) {
       container: false
     }
   };
-};
 
-AppCtrl.$inject = ['$scope','$state'];
+  function addAccount() {
+    CreateAccountModal()
+      .then(employee => {
+
+      })
+  }
+}
 
 export default (ngModule) => {
   ngModule.controller('AppCtrl', AppCtrl);

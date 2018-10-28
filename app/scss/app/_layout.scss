@@ -1,6 +1,7 @@
 body {
   position: relative;
   font-family: "OpenSans";
+  background: #f4f4f4;
 }
 .app-header {
   background-color: $app-header-bg;
@@ -26,4 +27,23 @@ body {
   vertical-align: middle;
   width: 180px;
   height: 40px;
+}
+.row-list {
+  display: grid;
+  padding: 1em;
+  margin: 2px;
+  word-wrap: break-word;
+  background: white;
+  grid-template-columns: 1% 10% 10% 20% 20% 5% 10% 10% 2% 2%;
+  cursor: pointer;
+}
+.row.employees-header {
+  font-size: 12px;
+  background: #f4f4f4;
+}
+.input-name {
+  display: flex;
+  input {
+    margin: 0px 5px 0px 5px;
+  }
 }

@@ -1,0 +1,54 @@
+<div class="modal-body">
+    <form name="$ctrl.form"
+          ng-submit="$ctrl.save()">
+        <h3>Create AD account</h3>
+        <div class="form-group">
+            <label for="first-name">Name</label>
+            <div class="input-name">
+                <input
+                        class="form-control"
+                        id="first-name"
+                        type="text"
+                        ng-model="$ctrl.employee.firstName"
+                        ng-change="$ctrl.changeName()"
+                        name="name"
+                        required>
+                <input
+                        class="form-control"
+                        id="last-name"
+                        type="text"
+                        ng-model="$ctrl.employee.lastName"
+                        ng-change="$ctrl.changeName()"
+                        name="name"
+                        required>
+            </div>
+        </div>
+        <div class="form-group">
+            Account Name (generated automatically)
+            <div>{{$ctrl.employee.name}}</div>
+        </div>
+        <div class="form-group">
+            <label for="email">E-mail</label>
+            <input
+                    class="form-control"
+                    id="email"
+                    type="email"
+                    ng-model="$ctrl.employee.email"
+                    name="name"
+                    required>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-gray btn-wide"
+                    type="button"
+                    tabindex="-1"
+                    aria-label="Cancel"
+                    ng-click="$ctrl.cancel()">Cancel
+            </button>
+            <button class="btn btn-success btn-wide"
+                    type="submit"
+                    aria-label="OK">
+                OK
+            </button>
+        </div>
+    </form>
+</div>

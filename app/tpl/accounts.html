@@ -1,3 +1,15 @@
 <div class="container">
   <h1>Accounts</h1>
+    <div class="row row-list employees-header">
+        <div>Name</div>
+        <div>Account Name</div>
+        <div>E-mail</div>
+        <div>Creator</div>
+        <div>Status</div>
+        <div>Start Date</div>
+        <div>Expiration Date</div>
+    </div>
+  <employee-list-element
+          ng-repeat="employee in accounts.employees"
+          employee="employee"></employee-list-element>
 </div>

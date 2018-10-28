@@ -46,7 +46,13 @@ export default (ngModule) => {
                     .state('app.accounts', {
                       url: '/accounts',
                       template: require('../tpl/accounts.html'),
-                      controller: 'AccountsCtrl as acounts'
+                      controller: 'AccountsCtrl as accounts',
+                      resolve: {
+                        /*@ngInject*/
+                        employees(AccountModel) {
+                          return AccountModel.getEmployees().$promise;
+                        }
+                      }
                     })
                     //Error
                     .state('app.error', {
