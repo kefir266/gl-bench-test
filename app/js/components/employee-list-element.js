@@ -6,6 +6,13 @@ module.exports = {
   controller: employeeListElement
 };
 
-function employeeListElement() {
+/*@ngInject*/
+function employeeListElement(AccountModel) {
   const $ctrl = this;
+  $ctrl.disableAccount = function () {
+    $ctrl.employee.status = 'Disable';
+    AccountModel.save($ctrl.employee);
+  }
+  
+
 }

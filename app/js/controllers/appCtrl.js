@@ -1,5 +1,5 @@
 /*@ngIngecut*/
-function AppCtrl($scope, $state, CreateAccountModal) {
+function AppCtrl($scope, $state, CreateAccountModal, Events) {
   let appCtrl = this;
 
   angular.extend(this, {
@@ -17,7 +17,7 @@ function AppCtrl($scope, $state, CreateAccountModal) {
   function addAccount() {
     CreateAccountModal()
       .then(employee => {
-
+        Events.broadcast(Events.REFRESH_ACCOUNTS);
       })
   }
 }

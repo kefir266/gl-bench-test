@@ -8,6 +8,15 @@ function AccountModel($resource) {
     'getEmployees': {
       method: 'GET',
       isArray: true
+    },
+    'create': {
+      method: 'POST'
+    },
+    'save': {
+      method: 'PUT',
+      params: {
+        id: '@id'
+      }
     }
   })
 }

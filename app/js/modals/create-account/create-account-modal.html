@@ -34,8 +34,10 @@
                     id="email"
                     type="email"
                     ng-model="$ctrl.employee.email"
+                    ng-click="$ctrl.changeEmail()"
                     name="name"
                     required>
+            <i class="alert-warning" ng-show="$ctrl.emailExist">Email is already exist</i>
         </div>
         <div class="modal-footer">
             <button class="btn btn-gray btn-wide"

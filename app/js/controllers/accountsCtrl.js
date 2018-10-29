@@ -4,9 +4,18 @@ function AccountsCtrl (
   $rootScope,
   $state,
   $stateParams,
-  employees
+  employees,
+  Events,
+  AccountModel
 ) {
+  const $ctrl = this;
   angular.extend(this, {employees});
+  Events.on(Events.REFRESH_ACCOUNTS, () => {
+    AccountModel.getEmployees().$promise
+      .then(response => {
+        $ctrl.employees = response;
+      })
+  })
 }
 
 export default (ngModule) => {

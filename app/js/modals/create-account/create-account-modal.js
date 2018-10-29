@@ -19,23 +19,33 @@ function CreateAccountModal($uibModal) {
 }
 
 /*@ngInject*/
-function CreateAccountModalCtrl($uibModalInstance) {
+function CreateAccountModalCtrl($uibModalInstance, AccountModel) {
   const $ctrl = this;
 
   angular.extend(this, {
     save,
     cancel,
-    changeName
+    changeName,
+    changeEmail,
+    emailExist: false
   });
 
   function save() {
     if (!$ctrl.form.$valid) {
       return false;
     }
-    //TODO check for unique e-mail
-
-    //TODO save
-    console.log(this.employee);
+    const params = { email: $ctrl.employee.email };
+    AccountModel.getEmployees(params).$promise
+      .then(response => {
+        if (response.length) {
+          $ctrl.form.$invalid = true;
+          $ctrl.emailExist = true;
+          return false;
+        } else {
+          AccountModel.create($ctrl.employee).$promise
+            .then(response => $uibModalInstance.close(response));
+        }
+      });
   }
 
   function cancel() {
@@ -43,6 +53,10 @@ function CreateAccountModalCtrl($uibModalInstance) {
   }
 
   function changeName() {
-    $ctrl.employee.name = `${$ctrl.employee.firstName||''}.${$ctrl.employee.lastName||''}`
+    $ctrl.employee.name = `${$ctrl.employee.firstName||''}.${$ctrl.employee.lastName||''}`;
+  }
+
+  function changeEmail() {
+    $ctrl.emailExist = false;
   }
 }

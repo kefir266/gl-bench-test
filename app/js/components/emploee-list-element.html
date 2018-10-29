@@ -6,4 +6,17 @@
     <div>{{$ctrl.employee.status}}</div>
     <div>{{$ctrl.employee.start_date | date}}</div>
     <div>{{$ctrl.employee.expiration_date | date}}</div>
+    <div><i class="glyphicon glyphicon-time"></i></div>
+    <div ng-click="$ctrl.menuClick()">
+        <div class="btn-group" uib-dropdown>
+            <button type="button" class="btn btn-primary" uib-dropdown-toggle>
+                <i class="glyphicon glyphicon-option-vertical"></i>
+            </button>
+            <ul class="dropdown-menu" uib-dropdown-menu role="menu"
+                aria-labelledby="single-button">
+                <li><a ng-click="$ctrl.resetPassword()">Reset Password</a></li>
+                <li><a ng-click="$ctrl.disableAccount()">Disable Account</a></li>
+            </ul>
+        </div>
+    </div>
 </div>
